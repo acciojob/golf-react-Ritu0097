@@ -6,7 +6,7 @@ class App extends Component {
         super(props);
         this.state = {
             renderBall: false,
-            ballPosition: { left: "5px" }
+            ballPosition: { left: "0px" }
         };
         this.buttonClickHandler = this.buttonClickHandler.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -25,7 +25,7 @@ class App extends Component {
     moveRight() {
         this.setState(prevState => ({
             ballPosition: {
-                left: (parseInt(prevState.ballPosition.left) + 5 + "px") 
+                left: (parseInt(prevState.ballPosition.left) + "5px") 
             }
         }));
     }
