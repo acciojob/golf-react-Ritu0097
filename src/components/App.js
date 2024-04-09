@@ -6,7 +6,7 @@ class App extends Component {
         super(props);
         this.state = {
             renderBall: false,
-            ballPosition: { left: "0px" }
+            ballPosition: { left: "5px" }
         };
         this.buttonClickHandler = this.buttonClickHandler.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -25,15 +25,13 @@ class App extends Component {
     moveRight() {
         this.setState(prevState => ({
             ballPosition: {
-                left: (parseInt(prevState.ballPosition.left) + 5) + "px"
+                left: (parseInt(prevState.ballPosition.left) + 5 + "px") 
             }
         }));
     }
-
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeyDown);
     }
-
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyDown);
     }
