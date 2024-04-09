@@ -14,13 +14,14 @@ class App extends Component {
     };
 
     buttonClickHandler() {
+        
         this.setState({ renderBall: true });
    }
     renderBallOrButton() {
 		if (this.state.renderBall) {
 		    return <div className="ball" style={this.state.ballPosition}></div>
 		} else {
-		    return <button onClick={this.buttonClickHandler} >Start</button>
+		    return <button className="start" onClick={this.buttonClickHandler} >Start</button>
 		}
     }
 
@@ -31,10 +32,16 @@ class App extends Component {
     render() {
         return (
             <div className="playground">
-                {this.renderBallOrButton()}
+                {this.state.renderBall ? (
+                    <div className="ball" style={this.state.ballPosition}></div>
+                ) : null}
+                {!this.state.renderBall && (
+                    <button className="start" onClick={this.buttonClickHandler}>Start</button>
+                )}
             </div>
-        )
+        );
     }
+    
 }
 
 
