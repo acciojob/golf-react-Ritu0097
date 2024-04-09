@@ -15,10 +15,6 @@ body html .root {
     width: 50px;
     border-radius: 25px;
 }
-.start {
-    display: inline-block;
-}
-
 .ball {
-    display: none;
+    display: inline-block; 
 }
